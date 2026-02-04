@@ -230,6 +230,8 @@ body {
   cursor: pointer;
   z-index: 10;
   transition: opacity 0.4s;
+
+  animation: pulse-glow 1.5s infinite alternate;
 }
 
 /* 열림 상태 */
@@ -264,5 +266,17 @@ body {
   }
   50% {
     transform: rotate(45deg) translate(-10px, -10px);
+  }
+}
+
+/* 왁스 실링 빛나는 효과 정의 */
+@keyframes pulse-glow {
+  0% {
+    box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  100% {
+    box-shadow: 0 0 20px 5px rgba(255, 107, 107, 0.6);
+    transform: translate(-50%, -50%) scale(1.05);
   }
 }
