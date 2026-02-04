@@ -101,7 +101,7 @@ body {
   box-sizing: border-box;
   
   width: 85%; 
-  max-width: 350px;
+  max-width: 400px;
   
   max-height: 60vh;
   overflow-y: auto;
