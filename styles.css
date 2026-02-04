@@ -23,7 +23,7 @@ body {
   position: relative;
   width: 300px; /* 기본 크기 */
   height: 200px;
-  transition: opacity 0.8s ease, visibility 0.8s;
+  transition: opacity 0.8s ease, visibility 0.8s, transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
 /* 모바일 화면(폭 500px 이하)에서 봉투 전체 축소 */
@@ -294,4 +294,14 @@ body {
 /* 스크롤바 트랙(바탕) 스타일 */
 .letter-content::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.05);
+}
+
+body:has(#envelope.open) .envelope-wrapper {
+  transform: translateY(60px);
+}
+
+@media (max-width: 500px) {
+  body:has(#envelope.open) .envelope-wrapper {
+    transform: scale(0.8) translateY(40px);
+  }
 }
