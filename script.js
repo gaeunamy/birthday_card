@@ -34,6 +34,7 @@ let isFinished = false;
 // 드래그 시작 공통 함수
 function startDrag(clientY) {
   if (!envelope.classList.contains('open') || isFinished) return;
+  if (navigator.vibrate) navigator.vibrate(10);
   isDragging = true;
   startY = clientY;
   letterHandle.style.cursor = 'grabbing';
@@ -49,6 +50,7 @@ function onDrag(clientY) {
 
   // 편지를 충분히 당겼을 때 (모바일을 고려해 기준 완화: -200px)
   if (newY < -200) {
+    if (navigator.vibrate) navigator.vibrate(40);
     isDragging = false;
     isFinished = true;
     envelopeWrapper.classList.add('hidden');
