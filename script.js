@@ -51,7 +51,7 @@ function onDrag(clientY) {
 
   // 편지를 드래그 하는 동안 진동
   if (Math.abs(newY - lastVibrateY) > 40) {
-    if (navigator.vibrate) navigator.vibrate(5); 
+    if (navigator.vibrate) navigator.vibrate(20); 
     lastVibrateY = newY;
   }
 
