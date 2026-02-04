@@ -30,6 +30,7 @@ let isDragging = false;
 let startY = 0;
 let savedY = 0;
 let isFinished = false;
+let lastVibrateY = 0;
 
 // 드래그 시작 공통 함수
 function startDrag(clientY) {
@@ -47,6 +48,12 @@ function onDrag(clientY) {
   const deltaY = clientY - startY;
   const newY = Math.min(0, Math.max(-350, savedY + deltaY));
   letterHandle.style.transform = `translateX(-50%) translateY(${newY}px)`;
+
+  // 편지를 드래그 하는 동안 진동
+  if (Math.abs(newY - lastVibrateY) > 40) {
+    if (navigator.vibrate) navigator.vibrate(5); 
+    lastVibrateY = newY;
+  }
 
   // 편지를 충분히 당겼을 때 (모바일을 고려해 기준 완화: -200px)
   if (newY < -200) {
