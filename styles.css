@@ -26,7 +26,7 @@ body {
   transition: opacity 0.8s ease, visibility 0.8s;
 }
 
-/* [핵심] 모바일 화면(폭 500px 이하)에서 봉투 전체 축소 */
+/* 모바일 화면(폭 500px 이하)에서 봉투 전체 축소 */
 @media (max-width: 500px) {
   .envelope-wrapper {
     transform: scale(0.8); /* 80% 크기로 줄임 */
@@ -98,7 +98,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%) scale(0.8);
 
-  /* [수정] 너비를 퍼센트로 설정하여 화면에 꽉 차지 않게 함 */
+  /* 너비를 퍼센트로 설정하여 화면에 꽉 차지 않게 함 */
   width: 80%;
   max-width: 500px; /* 최대 너비 제한 */
   max-height: 80vh; /* 너무 길어지면 스크롤 */
@@ -139,6 +139,10 @@ body {
   font-weight: bold;
   color: var(--env-dark);
   font-size: 1.1rem;
+
+  font-weight: normal;
+  color: #444;
+  font-size: 1rem;
 }
 
 /* 모바일에서 폰트 크기 약간 줄임 */
